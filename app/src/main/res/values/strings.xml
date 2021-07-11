@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MapaGoogle</string>
+    <string name="op1">Mapas</string>
+    <string name="op2">Tipos</string>
+    <string name="normal">Normal</string>
+    <string name="satelital">Satelital</string>
 </resources>

@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
                 (SupportMapFragment) getSupportFragmentManager()
                         .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
     }
 
     @Override
