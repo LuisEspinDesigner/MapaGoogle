@@ -15,31 +15,47 @@
         tools:context=".MainActivity" />
 
     <com.getbase.floatingactionbutton.FloatingActionsMenu
-        android:id="@+id/grupo"
+        android:id="@+id/grupomenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="8dp"
-        app:fab_addButtonPlusIconColor="@color/white">
+        app:fab_addButtonColorNormal="#4cbdb0"
+        app:fab_addButtonColorPressed="#4cbdb0"
+        app:fab_addButtonPlusIconColor="@color/white"
+        app:fab_addButtonSize="mini"
+        app:fab_labelStyle="@style/Widget.Design.FloatingActionButton"
+        app:fab_labelsPosition="right">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mapnormal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_title="@string/normal"
             app:fab_icon="@drawable/ic_baseline_map_24"
-            app:fab_addButtonSize="mini"
-             />
+            app:fab_size="mini"
+            app:fab_title="@string/normal" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mapsatelital"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_addButtonSize="mini" />
+            app:fab_size="mini"
+            app:fab_title="@string/satelital" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/maphibrido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_addButtonSize="mini" />
+            app:fab_size="mini"
+            app:fab_title="@string/hibrido" />
+
+        <com.getbase.floatingactionbutton.FloatingActionButton
+            android:id="@+id/mapterreno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:fab_size="mini"
+            app:fab_title="@string/terreno" />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 </RelativeLayout>
