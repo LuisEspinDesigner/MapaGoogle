@@ -2,7 +2,6 @@ package com.example.mapagoogle;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -70,19 +69,45 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         mapa.moveCamera(CameraUpdateFactory.newLatLngZoom(Quevedo, 14));
         mapa.setInfoWindowAdapter(new InfoAdapter(MainActivity.this));
         mapa.setOnMarkerClickListener(this);
-        LatLng facultadEmpresariales = new LatLng(-1.0122321051743568, -79.47053223678434);
-        marcador(facultadEmpresariales);
+        LatLng FCE = new LatLng(-1.0122321051743568, -79.47053223678434);
+        LatLng FCI = new LatLng(-1.012811, -79.470562);
+        LatLng LICENF = new LatLng(-1.013007, -79.469345);
+        String jsonfce="{\n" +
+                "    \"nombre\": \"FACULTAD DE CIENCIAS EMPRESARIALES\",\n" +
+                "    \"campus\": \"Ingeniero Manuel Agustín Haz Álvarez\",\n" +
+                "    \"decano\": \"Ing. Mariela Susana Andrade Arias, PhD.\",\n" +
+                "    \"imagen\": \"https://www.uteq.edu.ec/images/about/logo_fce.jpg\",\n" +
+                "    \"correo\": \"facultadce@uteq.edu.ec\"\n" +
+                "  }";
+        String jsonfci=" {\n" +
+                "    \"nombre\": \"FACULTAD DE CIENCIAS DE LA INGENIERÍA\",\n" +
+                "    \"campus\": \"Ingeniero Manuel Agustín Haz Álvarez\",\n" +
+                "    \"decano\": \"Ing. Washington Alberto Chiriboga Casanova, M.Sc.\",\n" +
+                "    \"imagen\": \"https://www.uteq.edu.ec/images/about/logo_fci.jpg\",\n" +
+                "    \"correo\": \"facultadci@uteq.edu.ec\"\n" +
+                "  }";
+        String jsonlicenf="  {\n" +
+                "    \"nombre\": \"Lic.ENFERMERIA\",\n" +
+                "    \"campus\": \"Ingeniero Manuel Agustín Haz Álvarez\",\n" +
+                "    \"decano\": \"\",\n" +
+                "    \"imagen\": \"https://www.uteq.edu.ec/images/about/logo_enf1.jpg\",\n" +
+                "    \"correo\": \"carreraenfermeria@uteq.edu.ec\"\n" +
+                "  }";
+        marcador(FCI,jsonfci);
+        marcador(LICENF,jsonlicenf);
+        marcador(FCE,jsonfce);
     }
 
-    private void marcador(LatLng posicion) {
-        MarkerOptions opMark = new MarkerOptions().position(posicion).draggable(true);
+    private void marcador(LatLng posicion,String json) {
+        MarkerOptions opMark = new MarkerOptions()
+                .position(posicion).draggable(true)
+                .title(json);
         mapa.addMarker(opMark);
     }
 
     @Override
     public boolean onMarkerClick(@NonNull Marker marker) {
         marker.showInfoWindow();
-        Toast.makeText(this, "Prueba", Toast.LENGTH_SHORT).show();
         return false;
     }
 }
